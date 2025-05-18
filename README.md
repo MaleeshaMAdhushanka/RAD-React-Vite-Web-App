@@ -1,54 +1,128 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. To create a React project using vite, Go to File->New -> Project -> Vite -> Select template as React, and tick Typescript Project option.
+   Through command line: `npm create vite@latest my-react-app -- --template react`
+2. To run a React app created using latest vite version, you need to upgrade your node version to 20.
+   `node -v` to check current version.
+   `sudo npm install -g n
+   sudo n 20
+   `
+3. Then run `npm install` to install the dependencies.
+4. Then you can see there is a script defined in `package.json` called `dev` to start the application.
+   `npm run dev`
+5. Then you'll have your vite React project running on `http://localhost:5173/`.
+6. Let's get familiar with the code structure a bit.
+7. Let's clear out the `App.tsx` file, `index.css` file, `App.css` file.
+8. Let's create a folder called `view` -> `common` and place the following common components under that.
+9. Create folder called `Navbar` and inside that folder please create `Navbar.tsx` file.
+```typescript jsx
+import './Navbar.css';
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+export function Navbar() {
+ return (
+         <div className="navbar">
+          This is Navbar!
+         </div>
+ );
+```
+Create `Navbar.css` file:
+```css
+.navbar {
+   background-color: rgb(68 69 68);
+   color: white;
+   padding: 2rem;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-size: 2rem;
+   display: flex;
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+10. Then add following code in `App.tsx`.
+```typescript jsx
+function App() {
+ return (
+    <>
+       <Navbar/>
+    </>
+ )
+}
+```
+11. Create folder called `MainContent` and inside that folder please create `MainContent.tsx` file.
+```typescript jsx
+import './MainContent.css';
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+export function MainContent() {
+ return (
+         <div className="main-content">
+          This is Main Content!
+         </div>
+ );
+}
+```
+Create `MainContent.css` file:
+```css
+.main-content {
+   background-color: rgb(218, 215, 203);
+   padding: 2rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   font-size: 2rem;
+   min-height: 26rem;
+   display: flex;
+}
+```
+12. Then add following code in `App.tsx`.
+```typescript jsx
+import {MainContent} from "./MainContent";
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+function App() {
+
+ return (
+    <>
+       <Navbar/>
+       <MainContent/>
+    </>
+ )
+}
+```
+13. Create folder called `Footer` and inside that folder please create `Footer.tsx` file.
+```typescript jsx
+import './Footer.css';
+
+export function Footer() {
+    return (
+        <div className="footer">
+            This is Footer!
+        </div>
+    );
+}
+```
+Create `Footer.css` file:
+```css
+.footer {
+   background-color: rgb(68 69 68);
+   color: white;
+   padding: 2rem;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-size: 2rem;
+   display: flex;
+}
+```
+
+14. Then add following code in `App.tsx`.
+```typescript jsx
+function App() {
+
+ return (
+         <>
+          <Navbar/>
+          <MainContent/>
+          <Footer/>
+         </>
+ )
+}
 ```
