@@ -1,7 +1,83 @@
 .navbar {
-    padding: 1px;
-    background-color: blue;
-    font-size: 24px;
-    color: white;
+    background-color: #222;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+}
+
+li a{
+    color: Yellow;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-left: 1.5rem;
+}
+
+.navbar button:hover {
+    background-color:  limegreen;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* space between logo and business name */
+}
+.business-name {
+    font-size: 18px;
+    font-family: "Arial Black";
+    padding: 5px;
+    color: white;
+}
+.business-name:hover{
+    color: limegreen;
+}
+
+.navbar li a:hover {
+    color: limegreen;
+}
+.navbar button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+}
+
+
+.navbar li:hover,
+.navbar li.active {
+    color: limegreen;
 }

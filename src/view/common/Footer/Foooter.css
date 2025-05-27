@@ -1,6 +1,40 @@
 .footer {
-    padding: 1px;
-    background-color: blue;
-    font-size: 24px;
-    color: white;
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.footer .business-name {
+    font-size: 20px;
+    font-family: "Arial Black";
+    color: #fff;
+    padding: 5px;
+}
+
+.footer .business-name:hover {
+    color: limegreen;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #bbb;
 }

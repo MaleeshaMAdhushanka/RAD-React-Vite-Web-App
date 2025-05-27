@@ -1,0 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+/* App.css or main layout CSS */
+body, #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+}
