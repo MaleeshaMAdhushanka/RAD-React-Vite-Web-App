@@ -27,9 +27,9 @@ export function Navbar() {
             </button>
 
             {/* Desktop Navigation */}
-            <ul className="hidden md:flex space-x-8">
+            <ul className="hidden md:flex space-x-8 text-2xl">
                 <li>
-                    <Link to="/" className="text-yellow-400 hover:text-[limegreen] transition-colors">Home</Link>
+                    <Link to="/" className=" text-yellow-400 hover:text-[limegreen] transition-colors">Home</Link>
                 </li>
                 <li>
                     <Link to="/about" className="text-yellow-400 hover:text-[limegreen] transition-colors">About</Link>
