@@ -16,15 +16,15 @@ export function Contact() {
     }
 
     return(
-        <div className="max-w-[500px] mx-auto my-10 p-8 bg-green-400 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+        <div className="max-w-[500px] mx-auto my-10 p-8 bg-white-800 rounded-xl shadow-4xl border-2  border-green-500">
+            <h2 className="text-4xl font-bold mb-6 text-green-500 text-center underline decoration-4 mb-6">Contact Us</h2>
 
             <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col">
-                    <label className="mb-1 font-medium">Email:</label>
+                <div className="flex flex-col items-center">
+                    <label className="mb-1 font-semibold text-2xl">Email:</label>
                     <input
                         type="email"
-                        className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         {...register('email', {
                             required: 'Email is required',
                             pattern:{
@@ -36,11 +36,11 @@ export function Contact() {
                     {errors.email && <span className="text-red-600 text-sm mt-1">{errors.email.message}</span>}
                 </div>
 
-                <div className="flex flex-col">
-                    <label className="mb-1 font-medium">Subject:</label>
+                <div className="flex flex-col items-center">
+                    <label className="mb-1 font-semibold text-2xl ">Subject:</label>
                     <input
                         type="text"
-                        className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         {...register('subject', {
                             required: 'Subject is required',
                             pattern: {
@@ -52,11 +52,11 @@ export function Contact() {
                     {errors.subject && <span className="text-red-600 text-sm mt-1">{errors.subject.message}</span>}
                 </div>
 
-                <div className="flex flex-col">
-                    <label className="mb-1 font-medium">Message:</label>
+                <div className="flex flex-col items-center">
+                    <label className="mb-1 font-semibold text-2xl">Message:</label>
                     <textarea
                         rows={5}
-                        className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                         {...register('message', {
                             required: 'Message is required'
                         })}
