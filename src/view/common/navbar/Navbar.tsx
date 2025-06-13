@@ -38,6 +38,9 @@ export function Navbar() {
                 <li>
                     <Link to="/contact" className="text-yellow-400 hover:text-[limegreen] transition-colors">Contact</Link>
                 </li>
+                <li>
+                    <Link to="/shopping-cart "className="text-yellow-400 hover:text-[limegreen] transition-colors">Shopping Cart</Link>
+                </li>
             </ul>
 
             {/* Mobile Navigation */}
@@ -53,6 +56,9 @@ export function Navbar() {
 
                         <li className="px-4 py-2 hover:bg-[#444]">
                             <Link to="/contact" className="text-yellow-400 hover:text-[limegreen] block">Contact</Link>
+                        </li>
+                        <li className="px-4 py-2 hover:bg-[#444]">
+                            <Link to="/shopping-cart "className="text-yellow-400 hover:text-[limegreen] transition-colors">Shopping Cart</Link>
                         </li>
                     </ul>
                 </div>

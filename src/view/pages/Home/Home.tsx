@@ -4,7 +4,7 @@ import {Product} from "../../common/Product/Product.tsx";
 type ProductData = {
     id: number,
     name: string,
-    price: string,
+    price: number,
     currency: string
     image: string
 };

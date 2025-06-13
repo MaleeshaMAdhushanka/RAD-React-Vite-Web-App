@@ -4,7 +4,7 @@ import {ModifyCart} from "../ModifyCart/ModifyCart.tsx";
 type ProductData = {
     id: number,
     name: string,
-    price: string,
+    price: number,
     currency: string,
     image: string
 }
@@ -32,7 +32,7 @@ export function Product({data}: ProductProps) {
     return (
         <div className="w-32 h-40 mr-2 mb-2 justify-center items-center
                                shadow-lg rounded-lg border border-green-300
-                               hover:bg-green-200">
+                               hover:bg-green-300">
             <div>
                 <img className="h-[90px] w-[90px]"
                      src={image} alt=""/>
