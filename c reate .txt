@@ -1,0 +1,29 @@
+// create store
+
+// configure store - use to create the store
+
+
+
+//create slice - name ekak dunna - products
+
+
+// use createAsyncThunk to  handle Async logic (Json dataLoading)
+//method ekaa namak dunna products/get All Products
+
+
+//cartSlice
+//state define
+//create slice
+//Define reducers logic - reducers
+ addItemToCart
+ incrementItem
+ decremenetItem
+
+ //Combine Reducers in to na Single one [Root Reducer]
+
+ //create newfile called rootReducer.ts inside slice folder
+
+ //combine reducers
+   //Logic define
+   //Store -Reducer Provied
+

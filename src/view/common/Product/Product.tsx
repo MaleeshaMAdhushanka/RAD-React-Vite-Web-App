@@ -1,13 +1,17 @@
-import {useState} from "react";
+// import {useState} from "react";
 import {ModifyCart} from "../ModifyCart/ModifyCart.tsx";
+import {ProductData} from "../../../model/ProductData.ts";
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "../../../store/store.ts";
+import {addItemToCart} from "../../../slice/cartSlice.ts";
 
-type ProductData = {
-    id: number,
-    name: string,
-    price: number,
-    currency: string,
-    image: string
-}
+// type ProductData = {
+//     id: number,
+//     name: string,
+//     price: number,
+//     currency: string,
+//     image: string
+// }
 type ProductProps = {
     data: ProductData
 }
@@ -19,14 +23,23 @@ const images: Record<string, string>
 
 export function Product({data}: ProductProps) {
     // console.log(images);
-    console.log(`../../../assets/products/${data.image}`)
+
+    // console.log(`../../../assets/products/${data.image}`)
 
     const image = images[`../../../assets/products/${data.image}`];
 
-    const [isActive, setIsActive]
-        = useState(false);
+  const dispatch =  useDispatch<AppDispatch>();
+
+    // const [isActive, setIsActive]
+    //     = useState(false);
+    //state eken data tika ganna
+
+   const  item = useSelector((state:RootState) => state.cart.items.find(cartItem => cartItem.product.id === data.id));
+
+
     const addToCart = () => {
-        setIsActive(true);
+        dispatch(addItemToCart(data))
+        // setIsActive(true);
     }
 
     return (
@@ -50,11 +63,8 @@ export function Product({data}: ProductProps) {
             </div>
             <div className="flex justify-center">
                 {
-                    isActive ? (
-                        <ModifyCart data={{
-                            product: data,
-                            itemCount: 1
-                        }}/>
+                    item ? (
+                        <ModifyCart data={data}/>
                     ) : (
                         <button className="w-full mt-4
                             p-[2.4px] bg-[#1f9e4b] text-[12px]

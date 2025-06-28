@@ -1,14 +1,20 @@
 //props type define kara pass kara
-import {CartItem} from "../../../model/CartItem.ts";
+// import {CartItem} from "../../../model/CartItem.ts";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store/store.ts";
 
 //mn identigy karanne Cart Iteme type
-interface ShoppingCartProps {
-    itemsList:CartItem[];
-}
+// interface ShoppingCartProps {
+//     itemsList:CartItem[];
+// }
 
 //item list eke loop karann ayanne array eeke lenght eka blanne
 //items list eken item eka and index eka
-export function ShoppingCart({itemsList} : ShoppingCartProps) {
+export function ShoppingCart() {
+
+   const {items } = useSelector((state:RootState) =>
+     state.cart);
+
     return(
          <div  className="flex justify-center items-center px-4">
              <div className="w-full max-w-screen-2xl  border-green-200 border">
@@ -27,7 +33,7 @@ export function ShoppingCart({itemsList} : ShoppingCartProps) {
                      <tbody>
 
                      {
-                         itemsList.length === 0 ?(
+                         items.length === 0 ?(
                              <tr>
                                  <td colSpan={5} className="border-green-300 border p-2 bg-green-100">
                                      <p className="text-center text-sm text-white">No items to Display!</p>
@@ -36,7 +42,7 @@ export function ShoppingCart({itemsList} : ShoppingCartProps) {
                              </tr>
 
                          ) : (
-                             itemsList.map((item, index) => (
+                             items.map((item, index) => (
                                  <tr key={item.product.id}
                                      className={`${index % 2 === 0 ? "bg-green-100" : "bg-green-200"} hover:bg-green-600 border bg-green-300`}>
                                      <td className="text-xs border-green-300 border p-2">{item.product.id}</td>

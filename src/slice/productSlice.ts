@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {ProductData} from "../model/ProductData.ts";
 
 interface ProductState {
-  list: [],
+  list: ProductData[],
   error: string | null | undefined
 
 }
@@ -29,10 +30,14 @@ const  productSlice = createSlice({
     initialState: initialState,
     reducers:{},
     extraReducers:(builder) => {
+         //Async Response pending
           builder.addCase(getAllProducts.pending,  () => {
               alert("Product data is still loading...");
+
+              // Async Response Complete State
           }) .addCase(getAllProducts.fulfilled, (state, action) => {
               state.list = action.payload;
+              // Async Response Failure State
           }) .addCase(getAllProducts.rejected, (state, action) => {
               state.error = action.error.message;
               alert("Error loading :" + state.error);
